@@ -90,14 +90,21 @@
      
      <!--js from example -->
      <script>
-     document.myForm.myName.setCustomValidity("To join our list, we at least need to know your name, please enter it here")
+
+        function initMessage(){
+            document.myForm.myName.setCustomValidity("To join our list, we at least need to know your name, please enter it here");
+        }
 
         function updateMessage(input){
         
-        if(input.value ==""){}
-        input.setCustomValidity('');
+            if(input.value ==""){
+                initMessage();
+            } else {
+                input.setCustomValidity('');
+            }
+        }
 
-        }   
+        initMessage();
      
      </script>
      
